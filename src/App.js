@@ -1,28 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { HashRouter, Route, Switch, Link } from  'react-router-dom';
+import Home from './views/Home.jsx';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+      this.state = {}
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React11111111111111111111111111111111111111
-          </a>
-        </header>
-      </div>
+        <div>
+          <HashRouter>
+            <Link to="/hell">hh</Link>
+
+            <Switch>
+              <Route path="/" component={Home} exact></Route>
+              <Route path="/hell" component={H} exact></Route>
+            </Switch>
+          </HashRouter>
+        </div>
     );
   }
+  gouwenjie () {
+    console.log(this)
+  }
 }
-
+function H() {
+    return (
+        <h1>jj</h1>
+    )
+}
 export default App;
